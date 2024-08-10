@@ -1,47 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>MEMES</title>
-    <link rel="icon" href="album/2.png" type="image/png"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirage - Meme Central</title>
     <style>
-        hr {
-            border: none;
-            height: 1px;
-            margin: 20px auto;
-            width: 80%;
+        @keyframes wobble {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+            100% { transform: rotate(0deg); }
         }
-        .hr-tomato {
-            background-color: tomato;
+        @keyframes colorChange {
+            0% { color: #ff0000; }
+            25% { color: #00ff00; }
+            50% { color: #0000ff; }
+            75% { color: #ffff00; }
+            100% { color: #ff00ff; }
         }
-        .hr-aqua {
-            background-color: aqua;
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
         }
-        video {
-            display: block;
-            margin: 20px auto;
-            max-width: 50%; /* Ensures the video fits within the screen */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 150px;
+            text-shadow: 3px 3px 3px white;
+            color: white;
+            animation: wobble 2s ease-in-out infinite, colorChange 5s linear infinite;
+        }
+        .meme-content {
+            margin-top: 40px;
+        }
+        .meme-video {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            margin-bottom: 20px;
+        }
+        .meme-text {
+            font-size: 24px;
+            margin: 20px 0;
+            animation: colorChange 5s linear infinite;
+        }
+        .home-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff4500;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            border-radius: 50px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin-top: 40px;
+        }
+        .home-button:hover {
+            transform: scale(1.1) rotate(5deg);
+            background-color: #ff6347;
         }
     </style>
 </head>
-<body style="background-color: black;">
-    <h1 style="font-size: 150px; text-shadow: 3px 3px 3px white; text-align: center; color: white;">
-        😂memememme
-    </h1>
-    <hr class="hr-tomato">
-    <hr class="hr-aqua">
-    <p style="color: tomato; font-size: 200 px; text-align: center;" >RIP MollyRae😢</p>
-    <video controls>
-        <source src="meme/Untitled_design_1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <hr class="hr-tomato">
-    <hr class="hr-aqua">
-    <video controls>
-        <source src="meme\QV_1704197572159.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <p style="background-color: aliceblue;  text-align: center; ">Soon</p>
-
+<body>
+    <div class="container">
+        <h1>😂memememme</h1>
+        
+        <div class="meme-content">
+            <p class="meme-text">RIP MollyRae😢</p>
+            <video class="meme-video" controls>
+                <source src="path_to_your_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <div class="meme-content">
+            <video class="meme-video" controls>
+                <source src="path_to_another_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="meme-text">Soon</p>
+        </div>
+        
+        <a href="home.html" class="home-button">BACK TO SANITY</a>
+    </div>
 </body>
 </html>
