@@ -1,96 +1,152 @@
 <!DOCTYPE html>
-<html?>
-    <head>
-        <title>
-            Album's
-        </title>
-        <link rel="icon" href="album/2.png" type="image/png"> <!-- Link to your PNG favicon -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Moments of Mirage</title>
     <style>
-        body{
-            background-color: black;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
         }
-
-        h1{
-            color: aliceblue;
-            font-family: cursive;
-            font-size: 80px;
-            text-align:center;
-            border: 2px solid blue;
+        h1 {
+            text-align: center;
+            color: #333;
         }
-        button {
-            font-size: medium;
-            font-family: cursive;
-            color: aliceblue;
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 2px solid aliceblue;
-            padding: 10px 20px;
+        .album {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .album-item {
+            width: 200px;
             cursor: pointer;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-            margin-top: 20px;
-            transition: background-color 0.3s, transform 0.3s;
         }
-        button:hover {
-            background-color: rgba(255, 255, 255, 0.3);
+        .album-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .album-item img:hover {
             transform: scale(1.05);
         }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .home-button {
+            display: block;
+            width: 200px;
+            margin: 40px auto;
+            padding: 15px 0;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 24px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .home-button:hover {
+            background-color: #45a049;
+        }
+        hr {
+            color: Green;
+        }
     </style>
-    </head>
-    <body>
-        <h1 >Sweet Moments fo Mirage </h1>
-        <br>
-        <p>
-            <img src="album\1687798089632.png" alt="Raghul" style="max-width: 100%; height: auto;">
-        </p>
-        <hr color="Green">
+</head>
+<body>
+    <h1>Sweet Moments of Mirage</h1>
+    <div class="album">
+        <div class="album-item">
+            <img src="album\1687800184428.png" alt="Raghul" onclick="openModal(this.src)">
+        </div>
+        <hr>
+        <div class="album-item">
+            <img src="album\1687971132851.png" alt="Raghul" onclick="openModal(this.src)">
+        </div>
+        <hr>
+        <div class="album-item">
+            <img src="album\1687971189814.png" alt="Raghul" onclick="openModal(this.src)">
+        </div>
+        <hr>
+        <div class="album-item">
+            <img src="album\1687971816357.png" alt="Raghul" onclick="openModal(this.src)">
+        </div>
+        <hr>
+        <div class="album-item">
+            <img src="album\1688749210225.png" alt="Raghul" onclick="openModal(this.src)">
+        </div>
+        <hr>
+        <div class="album-item">
+            <img src="album\1688754651646.png" alt="Raghul" onclick="openModal(this.src)">
+        </div>
+        <hr>
+        <div class="album-item">
+            <img src="album\1689007769052.png" alt="Raghul" onclick="openModal(this.src)">
+        </div>
+        <hr>
+        <div class="album-item">
+            <img src="album\1689617469358 - Copy.png" alt="Raghul" onclick="openModal(this.src)">
+        </div>
+        <hr>
+        <div class="album-item">
+            <img src="album\1691595246189 - Copy.png" alt="Raghul" onclick="openModal(this.src)">
+        </div>
+    </div>
 
-        <p>
-            <img src="album\1687800184428.png" alt="Raghul" style="max-width: 100%; height: auto;">
-        </p>
-        <hr color="Green">
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
 
-        <p>
-            <img src="album\1687971132851.png" alt="Raghul" style="max-width: 100%; height: auto;">
-        </p>
-        <hr color="Green">
+    <script>
+        function openModal(imgSrc) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("modalImg");
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+        }
 
-        <p>
-            <img src="album\1687971189814.png" alt="Raghul" style="max-width: 100%; height: auto;">
-        </p>
-        <hr color="Green">
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
 
-        <p>
-            <img src="album\1687971816357.png" alt="Raghul" style="max-width: 100%; height: auto;">
-        </p>
-        <hr color="Green">
-
-        <p>
-            <img src="album\1688749210225.png" alt="Raghul" style="max-width: 100%; height: auto;">
-        </p>
-        <hr color="Green">
-
-        <p>
-            <img src="album\1688754651646.png" alt="Raghul" style="max-width: 100%; height: auto;">
-        </p>
-        <hr color="Green">
-
-        <p>
-            <img src="album\1689007769052.png" alt="Raghul" style="max-width: 100%; height: auto;">
-        </p>
-        <hr color="Green">
-
-        <p>
-            <img src="album\1689617469358 - Copy.png" alt="Raghul" style="max-width: 100%; height: auto;">
-        </p>
-        <hr color="Green">
-
-        <p>
-            <img src="album\1691595246189 - Copy.png" alt="Raghul" style="max-width: 100%; height: auto;">
-        </p>
-        <hr color="Green">
-        <br>
-        <a href="home.html">
-            <button class="home-button">Home</button>
-        </a>
-        
-    </body>
+    <a href="home.html" class="home-button">BACK TO SANITY</a>
+</body>
 </html>
