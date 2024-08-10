@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vixxie Profile</title>
+    <title>Vixxie - Profile</title>
     <link rel="icon" href="album/2.png" type="image/png"> <!-- Link to your PNG favicon -->
     <style>
         @keyframes fadeIn {
@@ -40,15 +40,22 @@
             color: #f0f0f0;
             margin: 0;
             padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
             text-align: center;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
+        .profile-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 1s ease-out;
+            animation: fadeIn 1s ease-out, pulse 2s infinite;
         }
 
         h1 {
@@ -60,13 +67,13 @@
             animation: slideInLeft 1s ease-out 0.5s backwards;
         }
 
-        .info {
+        .profile-box {
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             padding: 20px;
             margin-top: 40px;
+            position: relative;
             animation: slideInRight 1s ease-out 1s backwards;
-            display: inline-block;
         }
 
         .info p {
@@ -74,31 +81,36 @@
             margin: 10px 0;
         }
 
-        button {
-            font-size: medium;
-            font-family: cursive;
-            color: aliceblue;
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 2px solid aliceblue;
-            padding: 10px 20px;
-            cursor: pointer;
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-            margin-top: 20px;
-            transition: background-color 0.3s, transform 0.3s;
+        .discord-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 15px 0;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 24px;
+            border-radius: 5px;
+            background: linear-gradient(45deg, #7289da, #4f5d75);
+            border: 2px solid #4f5d75;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            animation: fadeIn 1s ease-out 1.5s backwards, pulse 2s infinite;
         }
 
-        button:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            transform: scale(1.05);
+        .discord-button:hover {
+            background: linear-gradient(45deg, #5b6b8f, #6b7c9f);
+            border-color: #6b7c9f;
         }
 
-        .home-button-container {
-            margin: 40px auto 0;
+        .discord-button:active {
+            transform: scale(0.95);
         }
 
         .home-button {
             display: block;
             width: 200px;
+            margin: 40px auto 0;
             padding: 15px 0;
             background-color: #4CAF50;
             color: white;
@@ -106,26 +118,26 @@
             text-decoration: none;
             font-size: 24px;
             border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: background-color 0.3s ease;
             animation: fadeIn 1s ease-out 1.5s backwards, pulse 2s infinite;
         }
 
         .home-button:hover {
             background-color: #45a049;
-            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    <img src="album/Screenshot_20231017_153438_com.tencent.cosg.jpg" alt="Vixxie">
-    <hr style="border: 1px solid chartreuse; width: 80%; margin: 20px auto;">
-    <h1>Vixxie</h1>
-    <div class="info">
-        <p><strong>UID:</strong> Vixxie</p>
-        <p><strong>ID:</strong> hide</p>
-        <p><strong>Discord:</strong> <a href="https://discordapp.com/users/697182486383296663" target="_blank" style="text-decoration: none;"><button>ID</button></a></p>
-    </div>
-    <div class="home-button-container">
+    <div class="container">
+        <img src="album/Screenshot_20231017_153438_com.tencent.cosg.jpg" alt="Vixxie" class="profile-image">
+        <h1>Vixxie</h1>
+        <div class="profile-box">
+            <div class="info">
+                <p><strong>UID:</strong> Vixxie</p>
+                <p><strong>ID:</strong> Hide</p>
+                <p><strong>Discord:</strong> <a href="https://discordapp.com/users/697182486383296663" target="_blank" class="discord-button">Join Discord</a></p>
+            </div>
+        </div>
         <a href="0.html" class="home-button">BACK</a>
     </div>
 </body>
