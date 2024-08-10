@@ -9,31 +9,52 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f0f0f0;
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            color: #f0f0f0;
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
         }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         h1 {
             text-align: center;
-            color: #333;
+            color: #fff;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            margin-bottom: 40px;
         }
+
         .album {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
+
         .album-item {
             width: 200px;
             cursor: pointer;
+            position: relative;
         }
+
         .album-item img {
             width: 100%;
             height: auto;
             border-radius: 8px;
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .album-item img:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
         }
+
         .modal {
             display: none;
             position: fixed;
@@ -46,12 +67,16 @@
             overflow: auto;
             background-color: rgba(0,0,0,0.9);
         }
+
         .modal-content {
             margin: auto;
             display: block;
             width: 80%;
             max-width: 700px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
+
         .close {
             position: absolute;
             top: 15px;
@@ -61,12 +86,14 @@
             font-weight: bold;
             transition: 0.3s;
         }
+
         .close:hover,
         .close:focus {
             color: #bbb;
             text-decoration: none;
             cursor: pointer;
         }
+
         .home-button {
             display: block;
             width: 200px;
@@ -80,11 +107,9 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
+
         .home-button:hover {
             background-color: #45a049;
-        }
-        hr {
-            color: Green;
         }
     </style>
 </head>
@@ -92,39 +117,31 @@
     <h1>Sweet Moments of Mirage</h1>
     <div class="album">
         <div class="album-item">
-            <img src="album\1687800184428.png" alt="Raghul" onclick="openModal(this.src)">
+            <img src="album/1687800184428.png" alt="Raghul" onclick="openModal(this.src)">
         </div>
-        <hr>
         <div class="album-item">
-            <img src="album\1687971132851.png" alt="Raghul" onclick="openModal(this.src)">
+            <img src="album/1687971132851.png" alt="Raghul" onclick="openModal(this.src)">
         </div>
-        <hr>
         <div class="album-item">
-            <img src="album\1687971189814.png" alt="Raghul" onclick="openModal(this.src)">
+            <img src="album/1687971189814.png" alt="Raghul" onclick="openModal(this.src)">
         </div>
-        <hr>
         <div class="album-item">
-            <img src="album\1687971816357.png" alt="Raghul" onclick="openModal(this.src)">
+            <img src="album/1687971816357.png" alt="Raghul" onclick="openModal(this.src)">
         </div>
-        <hr>
         <div class="album-item">
-            <img src="album\1688749210225.png" alt="Raghul" onclick="openModal(this.src)">
+            <img src="album/1688749210225.png" alt="Raghul" onclick="openModal(this.src)">
         </div>
-        <hr>
         <div class="album-item">
-            <img src="album\1688754651646.png" alt="Raghul" onclick="openModal(this.src)">
+            <img src="album/1688754651646.png" alt="Raghul" onclick="openModal(this.src)">
         </div>
-        <hr>
         <div class="album-item">
-            <img src="album\1689007769052.png" alt="Raghul" onclick="openModal(this.src)">
+            <img src="album/1689007769052.png" alt="Raghul" onclick="openModal(this.src)">
         </div>
-        <hr>
         <div class="album-item">
-            <img src="album\1689617469358 - Copy.png" alt="Raghul" onclick="openModal(this.src)">
+            <img src="album/1689617469358 - Copy.png" alt="Raghul" onclick="openModal(this.src)">
         </div>
-        <hr>
         <div class="album-item">
-            <img src="album\1691595246189 - Copy.png" alt="Raghul" onclick="openModal(this.src)">
+            <img src="album/1691595246189 - Copy.png" alt="Raghul" onclick="openModal(this.src)">
         </div>
     </div>
 
