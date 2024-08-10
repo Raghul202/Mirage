@@ -1,10 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>MollyRae</title>
-    <link rel="icon" href="album/2.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MollyRae Profile</title>
+    <link rel="icon" href="album/2.png" type="image/png"> <!-- Link to your PNG favicon -->
     <style>
-         button {
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-100%); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(100%); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #1a1a1a, #333333);
+            background-size: 200% 200%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
+            font-size: 100px;
+            font-family: cursive;
+            color: #ffffff;
+            text-shadow: 5px 5px 5px rgb(80, 231, 34);
+            margin: 40px 0;
+            animation: slideInLeft 1s ease-out 0.5s backwards;
+        }
+
+        .info {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 40px;
+            animation: slideInRight 1s ease-out 1s backwards;
+            display: inline-block;
+        }
+
+        .info p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        button {
             font-size: medium;
             font-family: cursive;
             color: aliceblue;
@@ -16,26 +86,47 @@
             margin-top: 20px;
             transition: background-color 0.3s, transform 0.3s;
         }
+
         button:hover {
             background-color: rgba(255, 255, 255, 0.3);
             transform: scale(1.05);
         }
+
+        .home-button-container {
+            margin: 40px auto 0;
+        }
+
+        .home-button {
+            display: block;
+            width: 200px;
+            padding: 15px 0;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 24px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: fadeIn 1s ease-out 1.5s backwards, pulse 2s infinite;
+        }
+
+        .home-button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
     </style>
 </head>
-<body style="background-color: black; text-align: center;">
-    
-    <img src="album\m.jpg" alt="MollyRae" style="max-width: 100%; height: auto;">
+<body>
+    <img src="album/m.jpg" alt="MollyRae">
     <hr style="border: 1px solid chartreuse; width: 80%; margin: 20px auto;">
-    <h1 style="color: rgb(255, 255, 255); font-family: cursive; font-size: 100px; text-align: center; text-shadow: 5px 5px 5px rgb(80, 231, 34);">MollyRae</h1>
-    <address style="color: azure; text-align: center; font-family: cursive; border: 1px solid greenyellow; padding: 10px; display: inline-block; margin: 20px 0;">
-        UID: MollyRae<br>
-        ID: Hide<br>
-        Discord: <a href="https://discordapp.com/users/755020720072818738" target="_blank" style="text-decoration: none;"><button>ID</button></a>
-    </address>
+    <h1>MollyRae</h1>
+    <div class="info">
+        <p><strong>UID:</strong> MollyRae</p>
+        <p><strong>ID:</strong> Hide</p>
+        <p><strong>Discord:</strong> <a href="https://discordapp.com/users/755020720072818738" target="_blank" style="text-decoration: none;"><button>ID</button></a></p>
+    </div>
     <div class="home-button-container">
-        <a href="0.html">
-            <button class="home-button">BACK</button>
-        </a>
+        <a href="0.html" class="home-button">BACK</a>
     </div>
 </body>
 </html>
